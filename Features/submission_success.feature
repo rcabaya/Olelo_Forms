@@ -1,32 +1,31 @@
 Feature: Submission Success
+  As a customer
+  So that I can save time submitting forms
+  I want to submit forms online
 
-As a customer
+  Scenario: verified submission
+    When I go to the website forms page
+    And I fill all required content
+    And I click on "Submit"
+    Then I should see "Forms Submitted Successfully!"
 
-So that I can correctly submit my foms online
+  Scenario: network error
+    When I go to the website forms page
+    And I fill all required content
+    And I click on "Submit"
+    And there was a network failure
+    Then I would see "Please submit forms again."
 
-I want to verify that it is submitted.
+  Scenario: submission incomplete
+    When I go to the website forms page
+    And I fill in my "Name" with my First Name and other fields blank
+    And I click on Submit
+    Then I should see "Error" on the page
 
-Scenario 1
+  Scenario: cancel submission # should this go in another feature
+    When I go to the website forms page
+    And I fill in my "Name" with all my information
+    And I click on Cancel
+    Then I should see all my info deleted.
 
-When I go to the website forms page
-
-And I fill all required content
-
-And I click on "Submit"
-
-Then I should see "Forms Submitted Successfully!"
-
-Scenario 2
-
-Scenario 2
-
-When I go to the website forms page
-
-And I fill all required content
-
-And I click on "Submit"
-
-Then I should see "Forms Submitted 
-
-Successfully!" but if there's a network failure then it should say "Please submit forms again."
 
