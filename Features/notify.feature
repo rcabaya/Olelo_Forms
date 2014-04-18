@@ -1,28 +1,17 @@
-Feature: Notify	
+Feature: Notify
+  As an administrator
+  So that I can respond quickly to form submissions
+  I want to receive email notifications of form submissions
 
-As an administrator
+  Scenario: receiving email notification
+    When a customer submits a form online
+    Then I should be notified via email
+    And I should see the forms sent
 
-So that I can be notified via email if there is a submission of forms
-
-I want to know when forms are submitted
-
-
-Scenario 1
-
-When a customer submits a form online
-
-I should be notified via email 
-
-Then I should see the forms sent
-
-
-Scenario 2
-
-When a customer submits a form online
-
-I should be able to change who gets notified via email
-
-Then I would be able to forward the email
+  Scenario: adjusting email notification
+    When I go to admin interface
+    And I enter admin email "new@admin.org"
+    Then I should see "updated new@admin.org"
 
 
 
