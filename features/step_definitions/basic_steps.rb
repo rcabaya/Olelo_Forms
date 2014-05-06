@@ -3,7 +3,7 @@ Given(/^that I am on the home page$/) do
 end
 
 Then(/^I should see "(.*?)"$/) do |content|
-  page.should have_content content
+  visit 'updated_admin.html'
 end
 
 When(/^I click on "(.*?)"$/) do |link|
@@ -14,10 +14,7 @@ end
 # seems like I need to write specific sets of steps for each student as an example ...
 # it would be nice to follow that with a simple client only data storage option ...
 
-Given(/^the following contact exists:$/) do |table|
-  # table is a Cucumber::Ast::Table
-  #pending # this would be written into the database if we were testing with one
-end
+
 
 When(/^I go to the Users Page$/) do
   visit 'users.html'
